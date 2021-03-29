@@ -1,0 +1,22 @@
+
+//TO USE THE KEY THAT IS PRESSED BY THE USER FOR A CERTAIN FUNCTION
+
+private KeyCode keyPressed;
+
+CapsuleCollider CCH = GetComponent<CapsuleCollider>();
+
+if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //UNDEFINED VARS
+            moveSpeed = sprintSpeed;
+        }
+        else if (Input.GetKey(KeyCode.LeftControl))
+        {
+            moveSpeed = crouchSpeed;
+            CCH.height = Mathf.MoveTowards(CCH.height, 1, 0.15f);
+        }
+        else
+        {
+            moveSpeed = walkSpeed;
+            CCH.height = Mathf.MoveTowards(CCH.height, 2, 0.15f);
+        }
